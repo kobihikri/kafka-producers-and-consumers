@@ -9,8 +9,10 @@
     <version>1.0</version>
     <packaging>pom</packaging>
 
-    <!-- <modules>
-    </modules> -->
+    <modules>
+        <module>demo/producer</module>
+        <module>demo/consumer</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
