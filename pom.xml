@@ -9,14 +9,8 @@
     <version>1.0</version>
     <packaging>pom</packaging>
 
-    <modules>
-        <!-- <module>demo/data-producers/raw-data-kafka-producer</module>
-        <module>demo/data-producers/enrichment-data-redis-producer</module>
-        <module>demo/direct-data-enrichment</module>
-        <module>demo/redis-enrichment-fetching-kafka-sink-connector</module>
-        <module>demo/redis-enrichment-source-connector</module>
-        <module>demo/kafka-streams-based-enrichment</module> -->
-    </modules>
+    <!-- <modules>
+    </modules> -->
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
