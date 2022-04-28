@@ -2,13 +2,12 @@ import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.Properties;
-import java.util.concurrent.Future;
 
 public class Main {
     public static void main(String... args){
 
         Properties producerProperties = new Properties();
-        producerProperties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        producerProperties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:9092");
         producerProperties.put(ProducerConfig.CLIENT_ID_CONFIG, "KafkaProducer");
         producerProperties.put(ProducerConfig.BATCH_SIZE_CONFIG, 1);
         producerProperties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
