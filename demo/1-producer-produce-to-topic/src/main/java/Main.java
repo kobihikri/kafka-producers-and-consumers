@@ -21,7 +21,6 @@ public class Main {
         try{
             System.out.println("Producing message");
             Future<RecordMetadata> sendFuture = kafkaProducer.send(message);
-            kafkaProducer.flush();
             RecordMetadata recordMetadata = sendFuture.get();
             System.out.println("Message produced: recordMetadata = partition:" + recordMetadata.partition() + ", offset:" + recordMetadata.offset());
         } catch (Exception ex){
