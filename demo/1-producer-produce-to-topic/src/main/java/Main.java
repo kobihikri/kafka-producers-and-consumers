@@ -17,7 +17,7 @@ public class Main {
 
 // 1. Produce to topic - let the DEFAULT PARTITIONER decide which partition to write the message to
         ProducerRecord<String, String> message
-                = new ProducerRecord("destination-topic-name","message-key","message-value");
+                = new ProducerRecord("test-topic","message-key","message-value");
 
 // 2. Produce to a specific topic partition
 //        int partitionNumber = 1;
