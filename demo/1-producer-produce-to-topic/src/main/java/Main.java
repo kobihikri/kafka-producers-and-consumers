@@ -10,6 +10,7 @@ public class Main {
         Properties producerProperties = new Properties();
         producerProperties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         producerProperties.put(ProducerConfig.CLIENT_ID_CONFIG, "KafkaProducer");
+        producerProperties.put(ProducerConfig.BATCH_SIZE_CONFIG, 1);
         producerProperties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         producerProperties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
@@ -20,8 +21,7 @@ public class Main {
 
         try{
             System.out.println("Producing message");
-            Future<RecordMetadata> sendFuture = kafkaProducer.send(message);
-            RecordMetadata recordMetadata = sendFuture.get();
+            RecordMetadata recordMetadata = kafkaProducer.send(message).get();
             System.out.println("Message produced: recordMetadata = partition:" + recordMetadata.partition() + ", offset:" + recordMetadata.offset());
         } catch (Exception ex){
             System.out.println("Error producing message: exception = " + ex.getMessage());
