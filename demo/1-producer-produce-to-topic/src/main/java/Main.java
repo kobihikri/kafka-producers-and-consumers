@@ -15,8 +15,13 @@ public class Main {
 
         Producer<String, String> kafkaProducer = new KafkaProducer<>(producerProperties);
 
+// 1. Produce to topic - let the DEFAULT PARTITIONER decide which partition to write the message to
         ProducerRecord<String, String> message
                 = new ProducerRecord("destination-topic-name","message-key","message-value");
+
+// 2. Produce to a specific topic partition
+//        int partitionNumber = 1;
+//        message = new ProducerRecord("destination-topic-name",partitionNumber, "message-key","message-value");
 
         try{
             System.out.println("Producing message");
