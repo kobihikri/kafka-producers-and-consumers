@@ -9,7 +9,6 @@ public class Main {
         Properties producerProperties = new Properties();
         producerProperties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:9092");
         producerProperties.put(ProducerConfig.CLIENT_ID_CONFIG, "KafkaProducer");
-        producerProperties.put(ProducerConfig.BATCH_SIZE_CONFIG, 1);
         producerProperties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         producerProperties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
