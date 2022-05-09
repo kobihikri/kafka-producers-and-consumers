@@ -20,7 +20,7 @@ public class Main {
 
 // 2. Produce to a specific topic partition
 //        int partitionNumber = 1;
-//        message = new ProducerRecord("destination-topic-name",partitionNumber, "message-key","message-value");
+//        message = new ProducerRecord("test-topic",partitionNumber, "message-key","message-value");
 
         try{
             System.out.println("Producing message");

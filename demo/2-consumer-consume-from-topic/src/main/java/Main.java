@@ -21,7 +21,7 @@ public class Main {
         while (true) {
             ConsumerRecords<String, String> records = kafkaConsumer.poll(Duration.ofMillis(1000));
             for (ConsumerRecord<String, String> record : records) {
-                System.out.println(record.topic() + ":" + record.offset());
+                System.out.println(record.topic() + ":" + record.offset() + ":" + record.partition());
             }
             try {
                 kafkaConsumer.commitSync();
